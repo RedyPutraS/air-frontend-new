@@ -36,7 +36,7 @@ jobs:
 
     - name: Update docker-compose.yml with the latest version
       run: |
-        sed -i "s|redyputras/pinvest3200:.*|redyputras/pinvest3200:${{ env.LATEST_VERSION }}|" ../var/www/pinvest3200/docker-compose.yml
+        sed -i "s|redyputras/pinvest3200:.*|redyputras/pinvest3200:${{ env.LATEST_VERSION }}|" /var/www/pinvest3200/docker-compose.yml
 
     - name: Deploy using SSH
       uses: appleboy/ssh-action@master
@@ -46,7 +46,7 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
-            cd ../var/www/pinvest3200
+            cd /var/www/pinvest3200
             docker pull redyputras/pinvest3200:${{ env.LATEST_VERSION }} 
             docker-compose down pinvest3200
             docker-compose up -d pinvest3200
