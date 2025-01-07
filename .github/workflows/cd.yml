@@ -24,19 +24,9 @@ jobs:
     - name: Get the latest version from Docker Hub
       id: get_latest_version
       run: |
+        # Dapatkan tag versi terbaru dari Docker Hub
         LATEST_VERSION=$(curl -s "https://hub.docker.com/v2/repositories/redyputras/pinvest3200/tags" | jq -r '.results[0].name')
         echo "LATEST_VERSION=${LATEST_VERSION}" >> $GITHUB_ENV
-
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v2
-      with:
-        context: .
-        push: true
-        tags: redyputras/pinvest3200:${{ env.LATEST_VERSION }} # Menggunakan versi terbaru yang diambil
-
-    - name: Update docker-compose.yml with the latest version
-      run: |
-        sudo sed -i "s|redyputras/pinvest3200:.*|redyputras/pinvest3200:${{ env.LATEST_VERSION }}|" /var/www/pinvest3200/docker-compose.yml
 
     - name: Deploy using SSH
       uses: appleboy/ssh-action@master
@@ -46,7 +36,15 @@ jobs:
         key: ${{ secrets.PRIVATE_KEY }}
         port: 22
         script: |
+            # Masuk ke direktori aplikasi
             cd /var/www/pinvest3200
-            docker pull redyputras/pinvest3200:${{ env.LATEST_VERSION }} 
+            
+            # Update versi image di docker-compose.yml
+            sudo sed -i "s|redyputras/pinvest3200:.*|redyputras/pinvest3200:${{ env.LATEST_VERSION }}|" docker-compose.yml
+            
+            # Tarik versi terbaru dari Docker Hub
+            docker pull redyputras/pinvest3200:${{ env.LATEST_VERSION }}
+            
+            # Restart service dengan versi terbaru
             docker-compose down pinvest3200
             docker-compose up -d pinvest3200 
