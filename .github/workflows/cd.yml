@@ -49,4 +49,4 @@ jobs:
             cd /var/www/pinvest3200
             docker pull redyputras/pinvest3200:${{ env.LATEST_VERSION }} 
             docker-compose down pinvest3200
-            docker-compose up -d pinvest3200
+            docker-compose up -d pinvest3200 
