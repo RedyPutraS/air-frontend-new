@@ -5,7 +5,7 @@ const baseUrl = "https://backend.ancorair.com/api/";
 export const getApi = (url: string) => {
   return axios.get(`${baseUrl}${url}`);
 };
- 
+
 export const PostFormPengaduan = async (url: string, data: FormData) => {
   return await axios.post('https://wbs.ancorair.com/api/formpengaduan', data, { headers: { 'Content-Type': 'multipart/form-data' } });
 };
