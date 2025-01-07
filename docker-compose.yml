@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  air-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: air-frontend
+    ports:
+      - "3100:3100"
+    environment:
+      - NODE_ENV=production
+    command: "npm run start -- -p 3100"

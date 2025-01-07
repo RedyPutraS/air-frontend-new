@@ -1,0 +1,32 @@
+.mySwiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .title {
+    color: black;
+  }
+}
+
+/* Grid style for XL screen */
+@media (min-width: 1280px) {
+  .grid-cols-xl {
+    grid-template-columns: 1fr 3fr;
+  }
+}
