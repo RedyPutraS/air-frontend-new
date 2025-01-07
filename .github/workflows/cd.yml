@@ -34,6 +34,10 @@ jobs:
         push: true
         tags: redyputras/pinvest3200:${{ env.LATEST_VERSION }} # Menggunakan versi terbaru yang diambil
 
+    - name: Update docker-compose.yml with the latest version
+      run: |
+        sed -i "s|redyputras/pinvest3200:.*|redyputras/pinvest3200:${{ env.LATEST_VERSION }}|" ../var/www/pinvest3200/docker-compose.yml
+
     - name: Deploy using SSH
       uses: appleboy/ssh-action@master
       with:
