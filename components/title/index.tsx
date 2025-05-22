@@ -10,7 +10,13 @@ interface Props {
 }
 
 function index(props: Props) {
-  const { label, isUnderline = true, style = {}, width = 62, ClassNames = "" } = props;
+  const {
+    label,
+    isUnderline = true,
+    style = {},
+    width = 62,
+    ClassNames = "",
+  } = props;
 
   return (
     <div
@@ -22,7 +28,7 @@ function index(props: Props) {
       {isUnderline && (
         <div
           data-aos="fade-right"
-          className="mt-1 border-b border-b-4 border-b-warning1"
+          className="mt-1 border-b-4 border-b-warning1"
           style={{ width }}
         />
       )}
