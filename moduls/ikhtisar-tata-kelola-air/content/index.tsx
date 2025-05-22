@@ -23,7 +23,7 @@ function index(props: Props) {
             <article className="prose" style={{ textAlign: "justify", maxWidth: '100%'}}>
             <div
               dangerouslySetInnerHTML={{
-                __html: hero.description_ikhtisar_ind,
+                __html: sign === "_ind" ? hero.description_ikhtisar_ind :  hero.description_ikhtisar_eng,
               }}
             />
             </article>

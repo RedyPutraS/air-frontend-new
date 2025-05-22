@@ -6,6 +6,8 @@ import {
   DaftarPemegangSaham,
   Dividen,
   PaparanPublikBonus,
+  TradingView,
+  TradingViewSaham,
 } from "moduls";
 import { Layout } from "components";
 import useCustomQuery from "hooks/useCustomQuery";
@@ -19,6 +21,7 @@ const Home: NextPage = () => {
   return (
     <Layout data={data} status={status}>
       {/* <StatistikSaham /> */}
+      <TradingViewSaham />
       <KomposisiPemegangSaham lang={lang} data={data} />
       <DaftarPemegangSaham lang={lang} data={data} />
       <Dividen lang={lang} data={data} />

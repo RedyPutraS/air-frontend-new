@@ -80,7 +80,7 @@ function useRedirect() {
       options: [
         {
           label_ind: "Ikhtisar Tata Kelola AIR",
-          label_eng: "GSG Overview",
+          label_eng: "GCG Overview",
           url: "ikhtisar-tata-kelola-air",
         }, // <-- hide
         {
@@ -103,6 +103,11 @@ function useRedirect() {
               label_eng: "Corporate Secretary",
               url: "perangkat-tata-kelola/sekretaris-perusahaan",
             },
+            // {
+            //   label_ind: "Piagam Audit Internal",
+            //   label_eng: "Internal Audit Charter",
+            //   url: "perangkat-tata-kelola/piagam-internal-audit",
+            // },
           ],
         },
         {
@@ -113,12 +118,12 @@ function useRedirect() {
       ],
       width: 250,
     },
-    // {
-    //   label_ind: "Ruang Media",
-    //   label_eng: "Media Room",
-    //   url: "ruang-media",
-    //   width: 200,
-    // },
+    {
+      label_ind: "Ruang Media",
+      label_eng: "Media Room",
+      url: "ruang-media",
+      width: 200,
+    },
     // {
     //   label_ind: "Karir",
     //   label_eng: "Career",

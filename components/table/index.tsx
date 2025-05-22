@@ -38,7 +38,7 @@ function index(props: Props) {
               <th
                 key={key}
                 className="p-3 font-semibold border border-gray-300"
-                align="left"
+                align="center"
               >
                 {item.label}
               </th>

@@ -11,8 +11,18 @@ const Home: NextPage = () => {
   const lang = useLanguage((state) => state.lang);
 
   const menuKomiteNominasi = data?.menuKomiteNominasi?.content?.[0];
+  console.log(menuKomiteNominasi);
+  
 
   const dataProfile = [
+    {
+      image: menuKomiteNominasi?.image_ketua_1,
+      jabatan_ind: menuKomiteNominasi?.jabatan_ketua_1_ind,
+      jabatan_eng: menuKomiteNominasi?.jabatan_ketua_1_eng,
+      name: menuKomiteNominasi?.nama_ketua_1,
+      description_ind: menuKomiteNominasi?.description_ketua_1_ind,
+      description_eng: menuKomiteNominasi?.description_ketua_1_eng,
+    },
     {
       image: menuKomiteNominasi?.image_ketua,
       jabatan_ind: menuKomiteNominasi?.jabatan_ketua_ind,
@@ -38,6 +48,7 @@ const Home: NextPage = () => {
       description_eng: menuKomiteNominasi?.description_anggota_2_eng,
     },
   ];
+  console.log(dataProfile);
 
   return (
     <Layout data={data} status={status}>

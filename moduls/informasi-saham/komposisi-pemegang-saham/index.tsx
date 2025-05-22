@@ -142,7 +142,7 @@ function index(props: Props) {
 
   return (
     <Container>
-      <Title label="Komposisi Pemegang Saham" />
+      <Title label={lang === "id" ? "Komposisi Pemegang Saham" : "Shareholder Composition"} />
 
       <div className="max-w-full overflow-x-auto">
         <Table customHeader={customHeader} customBody={customBody} />

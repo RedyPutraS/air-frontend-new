@@ -100,8 +100,8 @@ function index(props: Props) {
               created_at: "2023-12-28T01:59:40.000000Z",
               updated_at: "2023-12-28T01:59:40.000000Z",
               description_eng: null,
-              title: "• Laporan JORC akan diumumkan pada awal Q3.<br>• Perusahaan akan memulai pembangunan pabrik pengolahan dan infrastruktur pada pertengahan 2024<br>• Produksi emas direncanakan mulai pada Q3 2026.",
-              title_eng: "• The JORC report will be announced at the beginning of Q3.<br>• The company will start construction of the processing plant and infrastructure by mid 2024<br>• Start of gold production by Q3 2026"
+              title: "• Perusahaan akan memulai pembangunan pabrik pengolahan dan infrastruktur pada pertengahan 2024<br>• Produksi emas direncanakan mulai pada Q3 2026.",
+              title_eng: "• The Company will start construction of the processing plant and infrastructure by mid 2024<br>• Start of gold production by Q3 2026 completed the exploration drilling at the end of Q4."
           },
           {
             id: 15,
@@ -133,7 +133,7 @@ function index(props: Props) {
             updated_at: "2023-12-12T07:43:03.000000Z",
             description_eng: null,
             title: "Perolehan kembali ijin eksplorasi dan pertambangan, setelah sebelumnya dicabut karena kurangnya aktivitas selama pandemi.",
-            title_eng: "Perolehan kembali ijin eksplorasi dan pertambangan, setelah sebelumnya dicabut karena kurangnya aktivitas selama pandemi."
+            title_eng: "Regranted the exploration and mining license, which were previously revoked due to a lack of activity during the pandemic."
           },
           {
             id: 13,
@@ -149,7 +149,7 @@ function index(props: Props) {
             updated_at: "2023-12-12T07:43:03.000000Z",
             description_eng: null,
             title: "Pada tanggal 14 Januari 2019, PT Indotan Lombok Barat Bangkit mendapatkan Izin Usaha Pertambangan Operasi Produksi berdasarkan Surat Keputusan Kepala Badan Koordinasi Penanaman Modal No. 3/1/IUP/PMA/2019 tanggal 14 Januari 2019 tentang Persetujuan Peningkatan Tahap Izin Usaha Pertambangan Operasi Produksi dalam rangka Penanaman Modal Asing untuk Komoditas Emas kepada PT Indotan Lombok Barat Bangkit (“IUP OP”).",
-            title_eng: "Pada tanggal 14 Januari 2019, PT Indotan Lombok Barat Bangkit mendapatkan Izin Usaha Pertambangan Operasi Produksi berdasarkan Surat Keputusan Kepala Badan Koordinasi Penanaman Modal No. 3/1/IUP/PMA/2019 tanggal 14 Januari 2019 tentang Persetujuan Peningkatan Tahap Izin Usaha Pertambangan Operasi Produksi dalam rangka Penanaman Modal Asing untuk Komoditas Emas kepada PT Indotan Lombok Barat Bangkit (“IUP OP”)."
+            title_eng: `On 14 January 2019, PT Indotan Lombok Barat Bangkit was granted a Production Operation Mining Business License based on the Decree of the Head of the Investment Coordinating Board No. 3/1/IUP/PMA/2019 dated 14 January 2019. This decree approved the upgrade of the mining license stage to a Production Operation Mining Business License for foreign investment purposes of gold commodities to PT Indotan Lombok Barat Bangkit (“IUP OP”).`
           },
           {
             id: 15,
@@ -165,7 +165,7 @@ function index(props: Props) {
               updated_at: "2023-12-28T01:59:40.000000Z",
               description_eng: null,
               title: "Pada tanggal 7 November 2017, PT Ancora Indonesia Resouces, Tbk (“Perseroan”) efektif menyelesaikan akuisisi atas 100% saham Indotan Lombok, Pte, Ltd. Transaksi pengambilalihan ini telah mendapatkan persetujuan Rapat Umum Pemegang Saham Perseroan pada tanggal 30 Oktober 2017.",
-              title_eng: "Pada tanggal 7 November 2017, PT Ancora Indonesia Resouces, Tbk (“Perseroan”) efektif menyelesaikan akuisisi atas 100% saham Indotan Lombok, Pte, Ltd. Transaksi pengambilalihan ini telah mendapatkan persetujuan Rapat Umum Pemegang Saham Perseroan pada tanggal 30 Oktober 2017."
+              title_eng: `On 7 November  2017, PT Ancora Indonesia Resources, Tbk (“the Company”) officially completed the acquisition of 100% shares of Indotan Lombok, Pte. Ltd. This acquisition transaction was approved during the Company’s General Meeting of Shareholders on 30 October 2017.`
           },
         ]
     }
@@ -213,7 +213,7 @@ function index(props: Props) {
       </div>
 
       <div className="mt-16">
-        <Title label="Proses Eksplorasi" />
+        <Title label={sign == "_ind" ? "Proses Eksplorasi" : "Exploration Process"} />
 
         <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-1">
           {dataProductKami.icons.map((icon:any, key:any) => (
@@ -278,7 +278,7 @@ function index(props: Props) {
       <MilestoneIndo lang={lang} data={dataa?.contentMilestone?.content} title={dataa?.sectionTitleMilestone?.section_title} /> 
 
       <div className="mt-16">
-        <Title label={"Program Pemberdayaan Masyarakat"} />
+        <Title label={sign === "_ind" ? "Program Pemberdayaan Masyarakat" : "Community Empowerment Program"} />
         <div className="mt-5">
           <Swiper
             className="xl:h-[350px] md:h-[300px]"
@@ -308,7 +308,7 @@ function index(props: Props) {
             ))}
           </Swiper>
         </div>
-        {/* <div className="mt-5">
+        <div className="mt-5">
           <Content
           row={{
             body: (
@@ -325,7 +325,9 @@ function index(props: Props) {
             //   body: hero["description_sertifikat" + sign],
             // }}
           />
-        </div> */}
+        </div>
+
+        
 
         {/* <div className="mt-5">
           {fileSertifikatDanPenghargaan?.map((item: any, key: any) => (

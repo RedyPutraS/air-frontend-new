@@ -40,7 +40,7 @@ function index(props: Props) {
         <Title label={content.titleOrganisasi} />
         <div className="hidden sm:block">
           <Button
-            label="Profil Manajemen"
+            label={lang === "en" ? "Management Profile" : "Profil Manajemen"}
             variant="outline"
             rightIcon={<ArrowRightIcon className="w-4" />}
             onClick={() => router.push(`/${id}/manajemen-air/komisaris`)}

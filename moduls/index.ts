@@ -4,6 +4,7 @@ export { default as Vision } from "./home/vision";
 export { default as Sustain } from "./home/sustain";
 export { default as Business } from "./home/business";
 export { default as TradingView } from "./home/trading";
+export { default as TradingViewSaham } from "./home/trading-page-saham";
 
 // <-- tentang-air page -->
 export { default as TentangAirProfile } from "./tentang-air/profile";

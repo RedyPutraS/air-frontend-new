@@ -63,7 +63,13 @@ function index(props: Props) {
                   router.push(
                     `/${routeId}/perangkat-tata-kelola/sekretaris-perusahaan`
                   );
-                } else if (item.includes("Direksi")) {
+                }
+                // else if (item.includes("Internal")) {
+                //   router.push(
+                //     `/${routeId}/perangkat-tata-kelola/piagam-internal-audit`
+                //   );
+                // }
+                else if (item.includes("Direksi")) {
                   router.push(`/${routeId}/manajemen-air/direksi`);
                 } else {
                   router.push(`/${routeId}/manajemen-air/komisaris`);

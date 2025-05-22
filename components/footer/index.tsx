@@ -20,27 +20,35 @@ function Footer() {
     //   url: `/${lang}/kebijakan-privasi`,
     //   label: lang === "en" ? "Privacy Policy" : "Kebijakan Privasi",
     // },
-    {
-      url: `/${lang}/ruang-media`,
-      label: lang === "en" ? "Media Room" : "Ruang Media",
-    },
+    // {
+    //   url: `/${lang}/ruang-media`,
+    //   label: lang === "en" ? "Media Room" : "Ruang Media",
+    // },
     { url: `/${lang}/karir`, label: lang === "en" ? "Career" : "Karir" },
   ];
   const privacy = {
     url: `/${lang}/kebijakan-privasi`,
-    label: lang === "en" ? "Privacy Statement" : "Kebijakan Privasi"
-  }
+    label: lang === "en" ? "Privacy Statement" : "Kebijakan Privasi",
+  };
   const contacts = [
     { url: "tel:+622129035011", label: "Phone", value: "+62 21 290 35 011" },
     { url: "/", label: "Fax", value: "+62 21 290 35 335" },
-    { url: "mailto:corporate.secretary@ancorair.com", label: "Email", value: "corporate.secretary@ancorair.com" },
+    {
+      url: "mailto:corporate.secretary@ancorair.com",
+      label: "Email",
+      value: "corporate.secretary@ancorair.com",
+    },
   ];
 
   return (
     <div className="px-5 py-5 text-white bg-primary lg:py-16 xl:px-16 2xl:px-64 grid grid-cols-1 lg:grid-cols-7 gap-5 ">
       <div className="col-span-1 lg:col-span-2">
         {/* <LogoIcon /> */}
-        <img alt="logo" src="/images/logo/AncoraLogoLight.png" className="h-[50px]" />
+        <img
+          alt="logo"
+          src="/images/logo/AncoraLogoLight.png"
+          className="h-[50px]"
+        />
         <div className="hidden mt-3 text-sm text-justify sm:text-base lg:block">
           Equity Tower 41st Floor Sudirman Central Business District (SCBD) Jl.
           Jend. Sudirman Kav. 52-53 Lot 9 Jakarta Selatan 12190
@@ -140,8 +148,6 @@ function Footer() {
           {privacy.label}
         </div>
       </div>
-      
-
 
       <div className="text-justify col-span-1 lg:col-span-7">
         {lang === "en"
