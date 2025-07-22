@@ -64,11 +64,11 @@ function index(props: Props) {
                     `/${routeId}/perangkat-tata-kelola/sekretaris-perusahaan`
                   );
                 }
-                // else if (item.includes("Internal")) {
-                //   router.push(
-                //     `/${routeId}/perangkat-tata-kelola/piagam-internal-audit`
-                //   );
-                // }
+                else if (item.includes("Internal")) {
+                  router.push(
+                    `/${routeId}/perangkat-tata-kelola/internal-audit-unit`
+                  );
+                }
                 else if (item.includes("Direksi")) {
                   router.push(`/${routeId}/manajemen-air/direksi`);
                 } else {

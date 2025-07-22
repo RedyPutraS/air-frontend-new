@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const baseUrl = "https://backend.ancorair.com/api/";
+// const baseUrl = "http://131.153.205.182:8082/api/";
 
 export const getApi = (url: string) => {
   return axios.get(`${baseUrl}${url}`);

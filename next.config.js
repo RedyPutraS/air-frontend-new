@@ -10,7 +10,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    domains: ['backend.ancorair.com', 'firebasestorage.googleapis.com'],
+    domains: ['backend.ancorair.com', 'firebasestorage.googleapis.com', '131.153.205.182'],
   },
 };
 

@@ -32,9 +32,11 @@ function index(props: Props) {
 
   const [tabIndex, setTabIndex] = useState(0);
 
-  const content = hero?.[tabIndex]?.media_ruang_media;
+  // Reverse the tab order: Artikel first, Berita second
+  const tabOrder = hero ? [hero[1], hero[0]] : [];
+  const content = tabOrder[tabIndex]?.media_ruang_media;
 
-  const lastContent = content.map((item: any, key: any) => {
+  const lastContent = content?.map((item: any, key: any) => {
     if (key > 0 && key < 5)
       return (
         <div
@@ -69,9 +71,9 @@ function index(props: Props) {
   return (
     <div className="pt-0 sm:pt-10">
       <Container>
-        <Tabs onChange={(index) => setTabIndex(index)}>
+        <Tabs onChange={(index) => setTabIndex(index)} defaultIndex={0}>
           <TabList>
-            {hero?.map((item: any, key: any) => (
+            {tabOrder.map((item: any, key: any) => (
               <Tab
                 key={key}
                 color="neutral"
@@ -93,10 +95,6 @@ function index(props: Props) {
             bg="primary"
             borderRadius="1px"
           />
-          {/* <TabPanels> */}
-          {/*   <TabPanel> */}
-          {/*   </TabPanel> */}
-          {/* </TabPanels> */}
         </Tabs>
 
         <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
@@ -121,10 +119,11 @@ function index(props: Props) {
         </div>
 
         <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-5">
-          {content.map((item: any, key: any) => {
+          {content?.map((item: any, key: any) => {
             if (key > 4)
               return (
                 <CardContent
+                  key={key}
                   image={formatImage(item.image)}
                   date={formatDate(item.date, lang)}
                   title={item["title" + sign]}

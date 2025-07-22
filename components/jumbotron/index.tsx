@@ -14,9 +14,9 @@ export default function Carousel({ data }: Props) {
   const { id } = router.query;
   const path = router.pathname.split("/")[2];
 
-  const slides = data && router.pathname === "/" ? data?.hero : initSlides;
+  const slides = data && router.pathname === "/" ? data?.hero || data?.dataPage?.hero : initSlides;
 
-  const heroImage = data?.hero?.image_hero;
+  const heroImage = data?.hero?.image_hero || data?.dataPage?.image_hero;
   const image_hero = heroImage ? formatImage(heroImage) : "";
 
   const { current, setCurrent } = useCarousel(slides);
@@ -31,12 +31,12 @@ export default function Carousel({ data }: Props) {
   const content =
     lang === "en"
       ? {
-          title: data?.hero?.title_hero_eng,
-          description: data?.hero?.description_hero_eng,
+          title: data?.hero?.title_hero_eng || data?.dataPage?.title_hero_eng,
+          description: data?.hero?.description_hero_eng || data?.dataPage?.description_hero_eng ,
         }
       : {
-          title: data?.hero?.title_hero_ind,
-          description: data?.hero?.description_hero_ind,
+          title: data?.hero?.title_hero_ind || data?.dataPage?.title_hero_ind,
+          description: data?.hero?.description_hero_ind || data?.dataPage?.description_hero_ind,
         };
 
   return (

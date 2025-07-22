@@ -8,7 +8,26 @@ function useRedirect() {
   const setLang = useLanguage((state) => state.setLang);
 
   const navlinks = [
-    { label_ind: "Tentang Kami", label_eng: "About Us", url: "tentang-air" },
+    // { label_ind: "Tentang Kami", label_eng: "About Us", url: "tentang-air" },
+    {
+      label_ind: "Tentang Kami",
+      label_eng: "About Us",
+      isDropdown: true,
+      options: [
+        {
+          label_ind: "Tentang Kami",
+          label_eng: "About Us",
+          url: "tentang-air",
+        },
+        {
+          label_ind: "Profil Manajemen",
+          label_eng: "Management Profile",
+          url: "manajemen-air/komisaris",
+        },
+        // { label_ind: "Keterbukaan Informasi", url: 'Keterbukaan-informasi' }, // <-- hide
+      ],
+      width: 300,
+    },
     {
       label_ind: "Info Investor",
       label_eng: "Investor Info",
@@ -102,6 +121,16 @@ function useRedirect() {
               label_ind: "Sekretaris Perusahaan",
               label_eng: "Corporate Secretary",
               url: "perangkat-tata-kelola/sekretaris-perusahaan",
+            },
+            {
+              label_ind: "Internal Audit Unit",
+              label_eng: "Internal Audit Unit",
+              url: "perangkat-tata-kelola/internal-audit-unit",
+            },
+            {
+              label_ind: "Profile Profesi Penunjang",
+              label_eng: "Supporting Professional Profile",
+              url: "perangkat-tata-kelola/profile-profesi-penunjang",
             },
             // {
             //   label_ind: "Piagam Audit Internal",
