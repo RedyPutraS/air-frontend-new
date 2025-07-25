@@ -55,6 +55,11 @@ function useRedirect() {
           url: "informasi-saham",
         },
         {
+          label_ind: "Presentasi Perusahaan",
+          label_eng: "Corporate Presentation",
+          url: "presentasi-perusahaan",
+        },
+        {
           label_ind: "Paparan Publik",
           label_eng: "Public Expose",
           url: "paparan-publik",
